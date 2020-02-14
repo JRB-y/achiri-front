@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <nav class="panel">
-      <p class="panel-heading">❤️ {{ title }}</p>
+      <p class="panel-heading">{{ title }}</p>
       <div class="section">
         <!-- ===== STEPPER (display number of steps) ===== -->
         <Stepper :steps="steps" :step="step"></Stepper>
