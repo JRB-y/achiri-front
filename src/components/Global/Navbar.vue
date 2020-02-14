@@ -1,13 +1,16 @@
 <template>
   <nav class="navbar" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
-      <a class="navbar-item" href="/">ACHIRI.tn</a>
+      <a class="navbar-item" href>
+        <img src="https://bulma.io/images/bulma-logo.png" width="112" height="28" />
+      </a>
+
       <a
         role="button"
         class="navbar-burger burger"
         aria-label="menu"
         aria-expanded="false"
-        data-target="mainNavbar"
+        data-target="navbarBasicExample"
         @click="showDrawer"
       >
         <span aria-hidden="true"></span>
@@ -16,18 +19,32 @@
       </a>
     </div>
 
-    <div id="mainNavbar" class="navbar-menu" :class="{ 'is-active': showMenu }">
+    <div id="navbarBasicExample" class="navbar-menu">
       <div class="navbar-start">
-        <!-- here we can put the menu -->
+        <a class="navbar-item">Accueil</a>
+
+        <a class="navbar-item">Trouver l'amour ❤️</a>
+
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link">More</a>
+
+          <div class="navbar-dropdown">
+            <a class="navbar-item">About</a>
+            <a class="navbar-item">Jobs</a>
+            <a class="navbar-item">Contact</a>
+            <hr class="navbar-divider" />
+            <a class="navbar-item">Report an issue</a>
+          </div>
+        </div>
       </div>
 
       <div class="navbar-end">
         <div class="navbar-item">
           <div class="buttons">
-            <!-- <a class="button is-primary" @click="showRegisterModal">
-              <strong>Créer un compte</strong>
-            </a>-->
-            <a class="button is-primary" @click="showLoginModal">Connexion</a>
+            <a class="button is-primary" @click="showLoginModal">
+              <strong>Inscription</strong>
+            </a>
+            <a class="button is-light">Connexion</a>
           </div>
         </div>
       </div>
