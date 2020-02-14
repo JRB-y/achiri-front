@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <nav class="panel">
-      <p class="panel-heading">{{subtitle}}</p>
+      <p class="panel-heading">❤️ {{ title }}</p>
       <div class="section">
         <!-- ===== STEPPER (display number of steps) ===== -->
         <Stepper :steps="steps" :step="step"></Stepper>
@@ -75,9 +75,9 @@ export default {
     };
   },
   computed: {
-    subtitle() {
-      if (this.step <= this.profileLength) return "Votre profile";
-      else return "Ce que vous cherchez";
+    title() {
+      if (this.step < this.profileLength - 1) return "Votre profile";
+      else return "Profile du Partenaire ";
     },
     buttonText() {
       if (this.step >= this.profileLength - 1) return "Terminer";
