@@ -2,14 +2,13 @@
   <nav class="navbar" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
       <a class="navbar-item" href="/">ACHIRI.tn</a>
-
       <a
         role="button"
         class="navbar-burger burger"
         aria-label="menu"
         aria-expanded="false"
         data-target="mainNavbar"
-        @click="showMenu = !showMenu"
+        @click="showDrawer"
       >
         <span aria-hidden="true"></span>
         <span aria-hidden="true"></span>
@@ -47,6 +46,9 @@ export default {
   methods: {
     showLoginModal() {
       this.$emit("showLoginModal");
+    },
+    showDrawer() {
+      this.$store.dispatch("toggle_drawer");
     }
     // showRegisterModal() {
     //   this.$emit("showRegisterModal");
