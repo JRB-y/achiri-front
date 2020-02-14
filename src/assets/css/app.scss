@@ -1,2 +1,7 @@
 @import 'bulma';
 @import 'buttons';
+@import '~bulma-steps';
+@import '~bulma-pageloader';
+
+/* ===== need to be placed after all css modifiers ===== */
+@import 'main';

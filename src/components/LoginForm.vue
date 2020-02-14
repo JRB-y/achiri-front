@@ -1,14 +1,7 @@
 <template>
   <div id="register-form" class="panel">
-    <div class="panel-heading">Création de compte</div>
+    <div class="panel-heading">Connexion</div>
     <div class="section">
-      <!-- Prénom -->
-      <div class="field">
-        <label class="label">Votre Prénom</label>
-        <div class="control">
-          <input class="input" type="text" placeholder="Votre prénom" />
-        </div>
-      </div>
       <!-- Email -->
       <div class="field">
         <label class="label">Votre Email</label>
@@ -23,23 +16,15 @@
           <input class="input" type="password" placeholder="Mot de passe" />
         </div>
       </div>
-      <!-- Confirmation mot de pass  -->
-      <div class="field">
-        <label class="label">Confirmer Mot de passe</label>
-        <div class="control">
-          <input class="input" type="password" placeholder="Confirmer mot de passe" />
-        </div>
-      </div>
-
+      <!-- Btn connexion -->
       <div class="panel-block">
         <button
           class="button is-primary is-outlined is-fullwidth"
           @click="completeProfile"
-        >Enregistrer</button>
+        >Connexion</button>
       </div>
-      <div class="field"></div>
-
-      <!-- spacer -->
+      <!-- <hr /> -->
+      <br />
       <!-- Button Facebook -->
       <div class="field">
         <button class="button is-fullwidth is-facebook is-small">Facebook</button>
@@ -53,9 +38,10 @@
 </template>
 <script>
 export default {
+  name: "LoginForm",
   methods: {
     completeProfile() {
-      this.$store.commit("toggleRegisterForm");
+      this.$store.commit("toggleLoginForm");
       this.$router.push({ path: "/complete-profile" });
     }
   }

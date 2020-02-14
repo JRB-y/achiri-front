@@ -11,38 +11,24 @@
           <!-- button F ou H -->
           <div class="field is-grouped">
             <p class="control">
-              <button class="button is-danger" @click="handleModalChange">Femme</button>
+              <button class="button is-danger" @click="handleRegisterModalChange">Femme</button>
             </p>
 
             <p class="control">
-              <button class="button is-link" @click="handleModalChange">Homme</button>
+              <button class="button is-link" @click="handleRegisterModalChange">Homme</button>
             </p>
           </div>
         </div>
       </div>
     </section>
-
-    <!-- Register Modal -->
-    <Modal :show="showModal" @modal="handleModalChange">
-      <RegisterForm></RegisterForm>
-    </Modal>
   </div>
 </template>
 <script>
-import Modal from "../components/Modal";
-import RegisterForm from "../components/RegisterForm";
-
 export default {
   name: "Index",
-  components: { Modal, RegisterForm },
-  data() {
-    return {
-      showModal: false
-    };
-  },
   methods: {
-    handleModalChange() {
-      this.showModal = !this.showModal;
+    handleRegisterModalChange() {
+      this.$store.commit("toggleRegisterForm");
     }
   }
 };

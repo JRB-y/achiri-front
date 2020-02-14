@@ -1,18 +1,46 @@
 <template>
   <div>
     <!-- Top navbar -->
-    <navbar></navbar>
-
+    <navbar @showLoginModal="handleLoginModalChange" @showRegisterModal="handleRegisterModalChange"></navbar>
+    <!--  Main section -->
     <router-view></router-view>
-    <!-- Main Section -->
+
+    <!-- Login Modal -->
+    <Modal :show="showLoginModal" @modal="handleLoginModalChange">
+      <LoginForm></LoginForm>
+    </Modal>
+
+    <!-- Register Modal -->
+    <Modal :show="showRegisterModal" @modal="handleRegisterModalChange">
+      <RegisterForm></RegisterForm>
+    </Modal>
   </div>
 </template>
 
 <script>
+import Modal from "./components/Modal";
 import Navbar from "./components/Navbar";
+import LoginForm from "./components/LoginForm";
+import RegisterForm from "./components/RegisterForm";
 
 export default {
   name: "app",
-  components: { Navbar }
+  components: { Navbar, LoginForm, RegisterForm, Modal },
+  computed: {
+    showLoginModal() {
+      return this.$store.state.showLoginForm;
+    },
+    showRegisterModal() {
+      return this.$store.state.showRegisterForm;
+    }
+  },
+  methods: {
+    handleLoginModalChange() {
+      this.$store.commit("toggleLoginForm");
+    },
+    handleRegisterModalChange() {
+      this.$store.commit("toggleRegisterForm");
+    }
+  }
 };
 </script>
