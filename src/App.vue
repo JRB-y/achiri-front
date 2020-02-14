@@ -21,8 +21,8 @@
 </template>
 
 <script>
-import Drawer from "./components/Global/Drawer";
 import Modal from "./components/Global/Modal";
+import Drawer from "./components/Global/Drawer";
 import Navbar from "./components/Global/Navbar";
 import LoginForm from "./components/Auth/LoginForm";
 import RegisterForm from "./components/Auth/RegisterForm";
@@ -30,13 +30,12 @@ import RegisterForm from "./components/Auth/RegisterForm";
 export default {
   name: "app",
   components: { Navbar, LoginForm, RegisterForm, Modal, Drawer },
-
   computed: {
     showLoginModal() {
-      return this.$store.state.showLoginForm;
+      return this.$store.getters.showLoginForm;
     },
     showRegisterModal() {
-      return this.$store.state.showRegisterForm;
+      return this.$store.getters.showRegisterForm;
     }
   },
   methods: {

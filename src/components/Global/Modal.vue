@@ -3,7 +3,6 @@
     <div class="modal-background" @click="close"></div>
     <div class="modal-content">
       <div class="box">
-        <!-- <register-form></register-form> -->
         <!-- SLOT -->
         <slot></slot>
       </div>
