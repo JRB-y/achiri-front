@@ -6,22 +6,22 @@
     <router-view></router-view>
 
     <!-- Login Modal -->
-    <Modal :show="showLoginModal" @modal="handleLoginModalChange">
+    <Modal :show="showLoginModal" @closeModal="handleLoginModalChange">
       <LoginForm></LoginForm>
     </Modal>
 
     <!-- Register Modal -->
-    <Modal :show="showRegisterModal" @modal="handleRegisterModalChange">
+    <Modal :show="showRegisterModal" @closeModal="handleRegisterModalChange">
       <RegisterForm></RegisterForm>
     </Modal>
   </div>
 </template>
 
 <script>
-import Modal from "./components/Modal";
-import Navbar from "./components/Navbar";
-import LoginForm from "./components/LoginForm";
-import RegisterForm from "./components/RegisterForm";
+import Modal from "./components/Global/Modal";
+import Navbar from "./components/Global/Navbar";
+import LoginForm from "./components/Auth/LoginForm";
+import RegisterForm from "./components/Auth/RegisterForm";
 
 export default {
   name: "app",

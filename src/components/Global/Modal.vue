@@ -1,6 +1,6 @@
 <template>
   <div class="modal" :class="{'is-active': show}">
-    <div class="modal-background" @click="openAndCloseModal"></div>
+    <div class="modal-background" @click="close"></div>
     <div class="modal-content">
       <div class="box">
         <!-- <register-form></register-form> -->
@@ -8,16 +8,21 @@
         <slot></slot>
       </div>
     </div>
-    <button class="modal-close is-large" aria-label="close" @click="openAndCloseModal"></button>
+    <button class="modal-close is-large" aria-label="close" @click="close"></button>
   </div>
 </template>
 <script>
 export default {
   name: "Modal",
-  props: ["show"],
+  props: {
+    show: {
+      type: Boolean,
+      required: true
+    }
+  },
   methods: {
-    openAndCloseModal() {
-      this.$emit("modal");
+    close() {
+      this.$emit("closeModal");
     }
   }
 };
