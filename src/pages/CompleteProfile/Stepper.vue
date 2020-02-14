@@ -6,7 +6,7 @@
       v-bind:key="index"
       :class="{'is-completed': val, 'is-active': index == step}"
     >
-      <div class="step-marker">
+      <div class="step-marker step-circle">
         <span class="icon">
           <i class="fa fa-check"></i>
         </span>
@@ -20,7 +20,24 @@
 
 <script>
 export default {
-  name: "Steper",
-  props: ["steps", "step"]
+  name: "Stepper",
+  props: {
+    steps: {
+      type: Array,
+      required: true
+    },
+    step: {
+      type: Number,
+      required: true
+    }
+  }
+  // props: ["steps", "step"]
 };
 </script>
+<style scoped>
+.step-circle:hover {
+  cursor: pointer;
+  scale: 1.1;
+  transition: 0.5s;
+}
+</style>
