@@ -26,16 +26,17 @@
         <StepFive v-if="step == 4"></StepFive>
 
         <!-- Buttons -->
-        <div class="panel-block bottom" v-if="start">
+        <div class="panel-block bottom m-t-20" v-if="start" style="right: 0;">
           <div class="field is-grouped is-fullwidth navbar-end">
-            <div class="control">
-              <button class="button is-secondary" :disabled="step == 0" @click="prev">Retour</button>
-            </div>
-            <div class="control">
-              <!-- Button Suivant (next) -->
-              <button class="button is-link is-outlined" @click="next">{{buttonText}}</button>
-              <!-- <button class="button is-primary" @click="next" v-else>Terminer</button> -->
-            </div>
+            <button class="button is-secondary m-l-20" :disabled="step == 0" @click="prev">Retour</button>
+
+            <!-- Button Suivant (next) -->
+            <button
+              class="button is-primary m-l-20"
+              :class="{'is-outlined': step < profileLength -1 }"
+              @click="next"
+            >{{buttonText}}</button>
+            <!-- <button class="button is-primary" @click="next" v-else>Terminer</button> -->
           </div>
         </div>
       </div>
