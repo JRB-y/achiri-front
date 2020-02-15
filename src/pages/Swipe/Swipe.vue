@@ -1,31 +1,42 @@
 <template>
-  <div class="container">
-    <div class="section">
-      <h1 class="title">Swipe</h1>
-      <h2 class="subtitle">
-        A simple container to divide your page into
-        <strong>sections</strong>, like the one you're currently reading
+  <div class="container" style="max-height: 100%">
+    <div class="panel">
+      <!-- title -->
+      <div class="panel-heading">Trouver l'amour</div>
+      <h2 class="subtitle is-6 m-t-10 has-text-centered">
+        <i class="material-icons has-text-danger">whatshot</i>
+        Envoyer un poke
+        <i class="material-icons">close</i>
+        Passer
       </h2>
-    </div>
 
-    <div class="columns is-mobile is-centered">
-      <div class="column is-half">
-        <figure class="image">
-          <img src="https://via.placeholder.com/150.png" />
-        </figure>
+      <!-- Profile -->
+      <div class="columns is-mobile is-centered">
+        <div class="column is-four-fifths-mobile is-half-desktop">
+          <figure class="image">
+            <img src="https://via.placeholder.com/150.png" />
+          </figure>
+          <div class="has-text-centered" style="display: flex; flex-direction: column;">
+            <span class="is-centered title is-6 m-0">J. Youssef</span>
+            <span class="is-centered title is-6 m-0">
+              <span class="is-primary">Age</span>: 29
+            </span>
+          </div>
+          <p class="is-6">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+        </div>
       </div>
-    </div>
-    <div class="columns is-mobile is-centered">
-      <div class="column is-half">
-        <button class="button is-secondary is-fullwidth">
-          <i class="material-icons">close</i>
-        </button>
+
+      <!-- Buttons -->
+      <div class="columns is-mobile is-centered">
+        <div class="column is-half has-text-centered">
+          <button class="button is-rounded is-danger is-normal m-r-10 m-l-10">
+            <i class="material-icons">whatshot</i>
+          </button>
+          <button class="button is-secondary is-rounded is-normal m-r-10 m-l-10">
+            <i class="material-icons">close</i>
+          </button>
+        </div>
       </div>
-    </div>
-    <div class="columns is-mobile is-centered">
-      <button class="button is-rounded is-danger">
-        <i class="material-icons">whatshot</i>
-      </button>
     </div>
   </div>
 </template>
