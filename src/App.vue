@@ -19,20 +19,30 @@
     <Drawer>
       <!-- <Menu></Menu> -->
     </Drawer>
+
+    <FooterComponent></FooterComponent>
   </div>
 </template>
 
 <script>
 // import Menu from "./components/Global/Menu";
 import Modal from "./components/Global/Modal";
-import Drawer from "./components/Global/Drawer";
 import Navbar from "./components/Global/Navbar";
+import Drawer from "./components/Global/Drawer";
 import LoginForm from "./components/Auth/LoginForm";
+import FooterComponent from "./components/Global/Footer";
 import RegisterForm from "./components/Auth/RegisterForm";
 
 export default {
   name: "app",
-  components: { Navbar, LoginForm, RegisterForm, Modal, Drawer },
+  components: {
+    Navbar,
+    LoginForm,
+    RegisterForm,
+    Modal,
+    Drawer,
+    FooterComponent
+  },
   computed: {
     showLoginModal() {
       return this.$store.getters.showLoginForm;
