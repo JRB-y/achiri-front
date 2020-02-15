@@ -17,13 +17,13 @@
     </Modal>
 
     <Drawer>
-      <Menu></Menu>
+      <!-- <Menu></Menu> -->
     </Drawer>
   </div>
 </template>
 
 <script>
-import Menu from "./components/Global/Menu";
+// import Menu from "./components/Global/Menu";
 import Modal from "./components/Global/Modal";
 import Drawer from "./components/Global/Drawer";
 import Navbar from "./components/Global/Navbar";
@@ -32,7 +32,7 @@ import RegisterForm from "./components/Auth/RegisterForm";
 
 export default {
   name: "app",
-  components: { Navbar, LoginForm, RegisterForm, Modal, Drawer, Menu },
+  components: { Navbar, LoginForm, RegisterForm, Modal, Drawer },
   computed: {
     showLoginModal() {
       return this.$store.getters.showLoginForm;
