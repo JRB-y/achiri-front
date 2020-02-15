@@ -4,8 +4,11 @@
       <p class="panel-heading">{{ title }}</p>
       <div class="section">
         <!-- ===== STEPPER (display number of steps) ===== -->
-        <Stepper :steps="steps" :step="step"></Stepper>
+        <Stepper :steps="steps" :step="step" v-if="start"></Stepper>
         <!-- ===== END STEPPER ===== -->
+
+        <!-- ==== Step 0 ==== -->
+        <StepZero v-if="!start" @start="startStepper"></StepZero>
 
         <!-- ==== Step 1 ==== -->
         <StepOne v-if="step == 0"></StepOne>
@@ -23,7 +26,7 @@
         <StepFive v-if="step == 4"></StepFive>
 
         <!-- Buttons -->
-        <div class="panel-block bottom">
+        <div class="panel-block bottom" v-if="start">
           <div class="field is-grouped is-fullwidth navbar-end">
             <div class="control">
               <button class="button is-secondary" :disabled="step == 0" @click="prev">Retour</button>
@@ -44,20 +47,30 @@
 </template>
 
 <script>
-import StepOne from "./steps/StepOne";
-import StepTwo from "./steps/StepTwo";
-import StepThree from "./steps/StepThree";
-import StepFour from "./steps/StepFour";
-import StepFive from "./steps/StepFive";
+import StepOne from "../../components/Stepper/steps/StepOne";
+import StepTwo from "../../components/Stepper/steps/StepTwo";
+import StepThree from "../../components/Stepper/steps/StepThree";
+import StepFour from "../../components/Stepper/steps/StepFour";
+import StepFive from "../../components/Stepper/steps/StepFive";
+import StepZero from "../../components/Stepper/steps/StepZero";
 
-import Stepper from "./Stepper";
+import Stepper from "../../components/Stepper/Stepper";
 
 export default {
   name: "CompleteProfile",
-  components: { StepOne, StepTwo, StepThree, StepFour, StepFive, Stepper },
+  components: {
+    StepOne,
+    StepTwo,
+    StepThree,
+    StepFour,
+    StepFive,
+    Stepper,
+    StepZero
+  },
   data() {
     return {
-      step: 0,
+      start: false,
+      step: -1,
       steps: [true, false, false, false, false],
       formEnded: false,
       profileLength: 5,
@@ -103,6 +116,10 @@ export default {
       // if (this.step <= 1) return;
       this.steps[this.step] = false;
       this.step--;
+    },
+    startStepper() {
+      this.start = true;
+      this.step++;
     }
   }
 };
