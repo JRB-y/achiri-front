@@ -2,7 +2,7 @@
   <nav class="navbar" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
       <a class="navbar-item" href="/">
-        <img src="https://bulma.io/images/bulma-logo.png" width="112" height="28" />
+        <img src="./../../assets/logo.png" width="112" height="28" />
       </a>
 
       <a
@@ -23,7 +23,7 @@
       <div class="navbar-start">
         <a class="navbar-item">Accueil</a>
 
-        <a class="navbar-item">Trouver l'amour ❤️</a>
+        <a class="navbar-item">Trouver l'amour</a>
 
         <div class="navbar-item has-dropdown is-hoverable">
           <a class="navbar-link">More</a>
