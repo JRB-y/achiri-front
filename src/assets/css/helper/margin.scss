@@ -1,0 +1,32 @@
+/*
+  Margin and Padding Spacing
+  
+  Examples
+  m-t-10 => margin top 10px
+  m-b-15 => margin bottom 15px
+*/
+$spaceamounts: (0, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 75, 100);
+$sides: (top, bottom, left, right);
+
+@each $space in $spaceamounts {
+
+  // all directions
+  .m-#{$space} {
+    margin: #{$space}px !important;
+  }
+
+  .p-#{$space} {
+    margin: #{$space}px !important;
+  }
+
+  // with direction
+  @each $side in $sides {
+    .m-#{str-slice($side, 0, 1)}-#{$space} {
+      margin-#{$side}: #{$space}px !important;
+    }
+
+    .p-#{str-slice($side, 0, 1)}-#{$space} {
+      padding-#{$side}: #{$space}px !important;
+    }
+  }
+}
