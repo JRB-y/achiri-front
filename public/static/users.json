@@ -1,0 +1,32 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "email": "jrb.youssef@gmail.com",
+      "name": "Jerbi Youssef",
+      "password": "123456",
+      "profile_id": 1
+    },
+    {
+      "id": 2,
+      "email": "sfar.fatma@gmail.com",
+      "name": "Sfar Fatma",
+      "password": "123456",
+      "profile_id": 2
+    },
+    {
+      "id": 3,
+      "email": "ahmed@gmail.com",
+      "name": "Ahmed Ben Aissa",
+      "password": "123456",
+      "profile_id": 3
+    },
+    {
+      "id": 4,
+      "email": "ferouk@gmail.com",
+      "name": "Ferouq Ben Aissa",
+      "password": "123456",
+      "profile_id": 4
+    }
+  ]
+}
