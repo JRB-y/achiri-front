@@ -1,11 +1,12 @@
 <template>
   <div class="row">
+    <Title :title="title" :subtitle="subtitle"></Title>
+
     <!-- Occupation -->
     <div class="field">
       <label class="label">Occupation</label>
       <div class="control">
         <input class="input" type="text" placeholder="Votre Occupation" />
-        <p class="help">Notez votre occupation</p>
       </div>
     </div>
     <!-- Etat Marital -->
@@ -31,3 +32,18 @@
     </div>
   </div>
 </template>
+
+<script>
+import Title from "../../Global/Helpers/Title";
+
+export default {
+  name: "StepTwo",
+  components: { Title },
+  data() {
+    return {
+      title: "Occupation",
+      subtitle: "Etat martial et religion"
+    };
+  }
+};
+</script>

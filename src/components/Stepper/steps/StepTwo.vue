@@ -1,5 +1,6 @@
 <template>
   <div class="row">
+    <Title :title="title" :subtitle="subtitle"></Title>
     <!-- Physique -->
     <div class="field">
       <label class="label">Physique</label>
@@ -22,3 +23,18 @@
     </div>
   </div>
 </template>
+
+<script>
+import Title from "../../Global/Helpers/Title";
+
+export default {
+  name: "StepTwo",
+  components: { Title },
+  data() {
+    return {
+      title: "Physique",
+      subtitle: "Votre physique et vos yeux"
+    };
+  }
+};
+</script>

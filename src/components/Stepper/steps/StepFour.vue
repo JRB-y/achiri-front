@@ -1,5 +1,6 @@
 <template>
   <div class="row">
+    <Title :title="title" :subtitle="subtitle"></Title>
     <!-- Fumeur? -->
     <div class="field">
       <label class="label">Etes-vous fumeur?</label>
@@ -19,16 +20,20 @@
       <label class="label">Votre caractère</label>
       <textarea class="textarea" placeholder="e.g. Hello world"></textarea>
     </div>
-
-    <!-- Religion -->
-    <div class="field">
-      <label class="label">Votre religion</label>
-      <div class="select is-fullwidth">
-        <select>
-          <option>Religion 1</option>
-          <option>Religion 2</option>
-        </select>
-      </div>
-    </div>
   </div>
 </template>
+
+<script>
+import Title from "../../Global/Helpers/Title";
+
+export default {
+  name: "StepTwo",
+  components: { Title },
+  data() {
+    return {
+      title: "Personnalité",
+      subtitle: "Decrivez votre caractère"
+    };
+  }
+};
+</script>

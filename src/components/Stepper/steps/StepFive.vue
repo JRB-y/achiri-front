@@ -1,5 +1,6 @@
 <template>
   <div class="row">
+    <Title :title="title" :subtitle="subtitle"></Title>
     <!-- Age  -->
     <span>Age de votre partenaire</span>
     <div class="columns">
@@ -30,3 +31,17 @@
     </div>
   </div>
 </template>
+<script>
+import Title from "../../Global/Helpers/Title";
+
+export default {
+  name: "StepTwo",
+  components: { Title },
+  data() {
+    return {
+      title: "Votre Partenaire",
+      subtitle: "Decrivez votre Partenaire idéal"
+    };
+  }
+};
+</script>
