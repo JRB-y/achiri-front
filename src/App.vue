@@ -17,7 +17,7 @@
     </Modal>
 
     <Drawer>
-      <!-- <Menu></Menu> -->
+      <Menu></Menu>
     </Drawer>
 
     <FooterComponent></FooterComponent>
@@ -25,7 +25,7 @@
 </template>
 
 <script>
-// import Menu from "./components/Global/Menu";
+import Menu from "./components/Global/Menu";
 import Modal from "./components/Global/Modal";
 import Navbar from "./components/Global/Navbar";
 import Drawer from "./components/Global/Drawer";
@@ -41,7 +41,8 @@ export default {
     RegisterForm,
     Modal,
     Drawer,
-    FooterComponent
+    FooterComponent,
+    Menu
   },
   computed: {
     showLoginModal() {
