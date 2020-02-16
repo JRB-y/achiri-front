@@ -3,11 +3,12 @@
     <div class="panel">
       <!-- title -->
       <div class="panel-heading">Trouver l'amour</div>
-      <h2 class="subtitle is-6 m-t-10 has-text-centered">
+      <h2 class="subtitle is-6 m-t-10 m-l-15">
         <i class="material-icons has-text-danger">whatshot</i>
         Envoyer un poke
+        <br />
         <i class="material-icons">close</i>
-        Passer
+        Passer à un autre Partenaire
       </h2>
 
       <!-- Profile -->

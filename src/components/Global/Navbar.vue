@@ -23,10 +23,10 @@
       <div class="navbar-start">
         <a class="navbar-item">Accueil</a>
 
-        <a class="navbar-item">Trouver l'amour</a>
+        <a class="navbar-item">Qui somme nous?</a>
 
         <div class="navbar-item has-dropdown is-hoverable">
-          <a class="navbar-link">More</a>
+          <a class="navbar-link">Trouver l'amour</a>
 
           <div class="navbar-dropdown">
             <a class="navbar-item">About</a>
