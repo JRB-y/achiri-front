@@ -1,6 +1,6 @@
 <template>
   <div id="register-form" class="panel">
-    <div class="panel-heading">Création de compte</div>
+    <div class="panel-heading">Inscription</div>
     <div class="section">
       <!-- Prénom -->
       <div class="field">
