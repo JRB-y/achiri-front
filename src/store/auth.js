@@ -1,21 +1,30 @@
 import axios from '../tools/axios';
 
 export default {
+  namespaced: true,
   state: {
-    users: []
+    currentUser: null
   },
   getters: {
 
   },
   mutations: {
-    LOGIN: (state, users) => { state.users = users }
+    LOGIN: (state, user) => { state.currentUser = user }
   },
   actions: {
-    login: function (context) {
-      axios.get('user')
-        .then(users => {
-          context.commit('LOGIN', users.data)
-        })
+    login: function (context, user) {
+
+      return new Promise((resolve, reject) => {
+
+        axios
+          .post('login', user)
+          .then(response => {
+            context.commit('LOGIN')
+            resolve(response.data)
+          })
+          .catch(error => reject(error.response.data.errors))
+
+      })
     }
   }
 }

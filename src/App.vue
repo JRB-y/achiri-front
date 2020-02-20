@@ -54,10 +54,10 @@ export default {
   },
   methods: {
     handleLoginModalChange() {
-      this.$store.commit("toggleLoginForm");
+      this.$store.commit("util/toggleLoginForm");
     },
     handleRegisterModalChange() {
-      this.$store.commit("toggleRegisterForm");
+      this.$store.commit("util/toggleRegisterForm");
     }
   }
 };
