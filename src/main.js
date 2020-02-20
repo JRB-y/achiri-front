@@ -9,10 +9,6 @@ import App from './App.vue'
 import router from './router/index'
 import { store } from './store/index'
 
-/* ==== Axios init and expose to 'this' globally ==== */
-import axios from './tools/axios'
-Vue.prototype.axios = axios
-
 Vue.config.productionTip = false
 
 new Vue({

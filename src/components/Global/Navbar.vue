@@ -23,10 +23,10 @@
       <div class="navbar-start">
         <a class="navbar-item">Accueil</a>
 
-        <a class="navbar-item">Trouver l'amour</a>
+        <a class="navbar-item">Qui somme nous?</a>
 
         <div class="navbar-item has-dropdown is-hoverable">
-          <a class="navbar-link">More</a>
+          <a class="navbar-link">Trouver l'amour</a>
 
           <div class="navbar-dropdown">
             <a class="navbar-item">About</a>
@@ -41,10 +41,10 @@
       <div class="navbar-end">
         <div class="navbar-item">
           <div class="buttons">
-            <a class="button is-primary" @click="showLoginModal">
+            <a class="button is-primary" @click="showRegisterModal">
               <strong>Inscription</strong>
             </a>
-            <a class="button is-light">Connexion</a>
+            <a class="button is-light" @click="showLoginModal">Connexion</a>
           </div>
         </div>
       </div>
@@ -64,8 +64,11 @@ export default {
     showLoginModal() {
       this.$emit("showLoginModal");
     },
+    showRegisterModal() {
+      this.$emit("showRegisterModal");
+    },
     showDrawer() {
-      this.$store.dispatch("toggle_drawer");
+      this.$store.dispatch("drawer/toggle_drawer");
     }
     // showRegisterModal() {
     //   this.$emit("showRegisterModal");

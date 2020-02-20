@@ -1,48 +1,53 @@
 <template>
-  <article class="panel is-primary">
-    <p class="panel-heading">Menu</p>
+  <article class="panel is-primary is-hidden-desktop">
+    <p class="panel-heading has-text-centered">ACHIRI</p>
 
     <a class="panel-block is-active">
       <span class="panel-icon">
-        <i class="fas fa-book" aria-hidden="true"></i>
+        <i class="material-icons">home</i>
       </span>
-      Profile
+      Accueil
     </a>
     <a class="panel-block">
       <span class="panel-icon">
-        <i class="fas fa-book" aria-hidden="true"></i>
+        <i class="fa fa-profile" aria-hidden="true"></i>
       </span>
-      Contacts
+      Comment Utiliser?
     </a>
     <a class="panel-block">
       <span class="panel-icon">
-        <i class="fas fa-book" aria-hidden="true"></i>
+        <i class="fa fa-profile" aria-hidden="true"></i>
       </span>
-      Filtres
+      Contact
     </a>
-    <a class="panel-block">
+
+    <a class="panel-block has-text-primary" @click="showLoginForm">
       <span class="panel-icon">
-        <i class="fas fa-book" aria-hidden="true"></i>
+        <i class="fa fa-book" aria-hidden="true"></i>
       </span>
-      Contacts
+      Connexion
     </a>
-    <a class="panel-block">
+    <a class="panel-block has-text-primary" @click="showRegisterForm">
       <span class="panel-icon">
-        <i class="fas fa-book" aria-hidden="true"></i>
+        <i class="fa fa-book" aria-hidden="true"></i>
       </span>
-      Configuration
-    </a>
-    <a class="panel-block">
-      <span class="panel-icon">
-        <i class="fas fa-book" aria-hidden="true"></i>
-      </span>
-      Payement
+      Inscription
     </a>
   </article>
 </template>
 
 <script>
 export default {
-  name: "Menu"
+  name: "Menu",
+  methods: {
+    showLoginForm() {
+      this.$store.dispatch("drawer/toggle_drawer");
+      this.$store.commit("util/toggleLoginForm");
+    },
+    showRegisterForm() {
+      this.$store.dispatch("drawer/toggle_drawer");
+      this.$store.commit("util/toggleRegisterForm");
+    }
+  }
 };
 </script>
