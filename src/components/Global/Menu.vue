@@ -41,8 +41,12 @@ export default {
   name: "Menu",
   methods: {
     showLoginForm() {
-      this.$store.commit("toggle_drawer");
-      this.$store.commit("toggleLoginForm");
+      this.$store.dispatch("drawer/toggle_drawer");
+      this.$store.commit("util/toggleLoginForm");
+    },
+    showRegisterForm() {
+      this.$store.dispatch("drawer/toggle_drawer");
+      this.$store.commit("util/toggleRegisterForm");
     }
   }
 };

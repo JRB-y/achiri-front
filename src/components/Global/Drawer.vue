@@ -12,12 +12,12 @@ export default {
   name: "Drawer",
   computed: {
     show() {
-      return this.$store.getters.getDrawer;
+      return this.$store.getters["drawer/getDrawer"];
     }
   },
   methods: {
     close() {
-      this.$store.dispatch("toggle_drawer");
+      this.$store.dispatch("drawer/toggle_drawer");
     }
   }
 };
